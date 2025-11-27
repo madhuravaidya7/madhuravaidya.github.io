@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" style="--background: #F8F5F3; --foreground: #171717; --accent: #7e7a7a; --accent-invert: #FFCFAF">
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/moon-icon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>madhura vaidya</title>
+    <meta name="description" content="Madhura Vaidya – community & creator experience, neuroscience student, content-focused builder.">
+    <meta name="keywords" content="Madhura Vaidya, community specialist, content creation, Twitch, neuroscience, Toronto, events, creator relations">
+    <meta name="author" content="Madhura Vaidya">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="madhura vaidya – community & creator-focused">
+    <meta property="og:description" content="Builder, storyteller, neuroscience student, and community-focused creator.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="madhura.jpg">
+
+    <!-- Fonts & Tailwind -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Crimson Pro', serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            cursor: none;
+        }
+        body.dark-mode { 
+            --background: #2A2A2A; 
+            --foreground: #F8F5F3; 
+            --accent: #A8E6CF;
+        }
+        .custom-cursor {
+            width: 12px;
+            height: 12px;
+            background: rgba(23, 23, 23, 0.2);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform .15s, opacity .15s;
+        }
+        body.dark-mode .custom-cursor {
+            background: var(--foreground);
+        }
+        .unified-border {
+            border: 1px solid var(--foreground);
+            transition: 0.2s ease;
+        }
+        .typewriter h1 {
+            letter-spacing: 0.15em;
+            overflow: hidden;
+            border-right: 0.15em solid currentColor;
+            white-space: nowrap;
+            animation: typing 3.5s steps(30), blink-caret .5s step-end infinite;
+        }
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink-caret { from, to { border-color: transparent; } 50% { border-color: currentColor; } }
+        .picture-container img {
+            width: 280px; height: 350px; object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center">
+    <div class="custom-cursor"></div>
+
+    <!-- THEME TOGGLE -->
+    <button id="theme-toggle" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center unified-border rounded-full">
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                d="M12 3v2m0 14v2m8-8h-2M4 12H2m15.364 6.364l-1.414-1.414M6.05 6.05L4.636 4.636m12.728 0L18.364 6.05M6.05 18.364l-1.414-1.414M12 8a4 4 0 110 8 4 4 0 010-8z"/>
+        </svg>
+        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+    </button>
+
+    <!-- MENU -->
+    <div class="flex justify-center space-x-5 mt-5 menu">
+        <a href="#" class="px-4 py-1.5 unified-border rounded-full font-medium">experience</a>
+        <a href="#" class="px-4 py-1.5 unified-border rounded-full font-medium">blog</a>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="w-full max-w-5xl px-4 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+            <!-- LEFT SIDE: TITLE + TAGLINE -->
+            <div class="text-center md:text-left order-2 md:order-1">
+                <div class="typewriter flex justify-center md:justify-start">
+                    <h1 class="text-4xl sm:text-5xl">hi, i'm madhura :)</h1>
+                </div>
+
+                <div class="text-center md:text-left mt-4 text-lg space-y-2">
+                    <div>i build community experiences & create things that feel personal.</div>
+                    <div class="text-accent mt-2">
+                        <span class="underline">my work → coming soon</span>
+                    </div>
+                </div>
+
+                <!-- SOCIAL ICONS -->
+                <div class="flex justify-center md:justify-start space-x-6 mt-6">
+                    <a href="https://www.linkedin.com/in/maddie-vaidya" target="_blank">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="4" y="4" width="16" height="16" rx="2"/>
+                            <line x1="8" y1="11" x2="8" y2="16"/>
+                            <line x1="8" y1="8" x2="8" y2="8.01"/>
+                            <line x1="12" y1="16" x2="12" y2="11"/>
+                            <path d="M16 16v-3a2 2 0 10-4 0"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:27vaidyam@gmail.com">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <polyline points="3 7 12 13 21 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: IMAGE -->
+            <div class="flex flex-col items-center order-1 md:order-2">
+                <div class="picture-container">
+                    <img src="madhura.jpg" alt="Madhura Vaidya" class="shadow-lg rounded-md">
+                </div>
+                <table class="mt-4 text-lg">
+                    <tr><th>📍 based in:</th><td>toronto / guelph</td></tr>
+                    <tr><th>🎓 studying:</th><td>neuroscience</td></tr>
+                    <tr><th>☕ drinking:</th><td>chai</td></tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const isDark = localStorage.getItem('darkMode') === 'true';
+            if (isDark) body.classList.add('dark-mode');
+        });
+
+        themeToggle.addEventListener("click", () => {
+            const isDark = body.classList.toggle("dark-mode");
+            localStorage.setItem('darkMode', isDark);
+        });
+
+        // Cursor effect
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>
