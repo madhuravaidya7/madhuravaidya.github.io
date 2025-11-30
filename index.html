@@ -4,64 +4,60 @@
     <link rel="icon" type="image/x-icon" href="/assets/moon-icon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Meta Tags -->
     <title>madhura vaidya</title>
-    <meta name="description" content="Madhura Vaidya – community & creator experience, neuroscience student, content-focused builder.">
-    <meta name="keywords" content="Madhura Vaidya, community specialist, content creation, Twitch, neuroscience, Toronto, events, creator relations">
-    <meta name="author" content="Madhura Vaidya">
-    <meta name="robots" content="index, follow">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="madhura vaidya – community & creator-focused">
-    <meta property="og:description" content="Builder, storyteller, neuroscience student, and community-focused creator.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="madhura.jpg">
-
-    <!-- Fonts & Tailwind -->
+    <!-- Fonts + Tailwind -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        :root {
+            --cursor-size: 12px;
+        }
+
         body {
+            cursor: none;
             font-family: 'Crimson Pro', serif;
             background-color: var(--background);
             color: var(--foreground);
-            cursor: none;
         }
-        body.dark-mode { 
-            --background: #2A2A2A; 
-            --foreground: #F8F5F3; 
-            --accent: #A8E6CF;
-        }
+
+        /* custom cursor */
         .custom-cursor {
-            width: 12px;
-            height: 12px;
+            width: var(--cursor-size);
+            height: var(--cursor-size);
             background: rgba(23, 23, 23, 0.2);
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
+            transition: transform 0.15s, opacity 0.15s;
             z-index: 9999;
-            transition: transform .15s, opacity .15s;
+            opacity: 0.8;
         }
-        body.dark-mode .custom-cursor {
-            background: var(--foreground);
-        }
+
+        /* general styles */
         .unified-border {
             border: 1px solid var(--foreground);
-            transition: 0.2s ease;
+            transition: all 0.2s ease;
         }
-        .typewriter h1 {
-            letter-spacing: 0.15em;
-            overflow: hidden;
-            border-right: 0.15em solid currentColor;
-            white-space: nowrap;
-            animation: typing 3.5s steps(30), blink-caret .5s step-end infinite;
-        }
-        @keyframes typing { from { width: 0; } to { width: 100%; } }
-        @keyframes blink-caret { from, to { border-color: transparent; } 50% { border-color: currentColor; } }
+
         .picture-container img {
-            width: 280px; height: 350px; object-fit: cover;
+            width: 280px;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        footer {
+            border-top: 1px solid var(--foreground);
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .heart-icon {
+            stroke: #DC2626;
+            fill: none;
+            margin-bottom: -4px;
         }
     </style>
 </head>
@@ -69,54 +65,46 @@
 <body class="min-h-screen flex flex-col items-center">
     <div class="custom-cursor"></div>
 
-    <!-- THEME TOGGLE -->
-    <button id="theme-toggle" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center unified-border rounded-full">
-        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" 
-                d="M12 3v2m0 14v2m8-8h-2M4 12H2m15.364 6.364l-1.414-1.414M6.05 6.05L4.636 4.636m12.728 0L18.364 6.05M6.05 18.364l-1.414-1.414M12 8a4 4 0 110 8 4 4 0 010-8z"/>
+    <!-- HOME BUTTON -->
+    <a href="/index.html" class="absolute top-6 left-6 w-10 h-10 flex items-center justify-center unified-border rounded-full hover:bg-accent/10 transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
         </svg>
-        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" 
-                d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-        </svg>
-    </button>
+    </a>
 
-    <!-- MENU -->
+    <!-- 🌟 UPDATED NAVIGATION -->
     <div class="flex justify-center space-x-5 mt-5 menu">
-        <a href="#" class="px-4 py-1.5 unified-border rounded-full font-medium">experience</a>
-        <a href="#" class="px-4 py-1.5 unified-border rounded-full font-medium">blog</a>
+        <a href="experience.html" 
+           class="px-4 py-1.5 unified-border rounded-full text-base font-medium hover:bg-accent/10 transition-all">
+           experience
+        </a>
     </div>
 
-    <!-- CONTENT SECTION -->
+    <!-- MAIN CONTENT -->
     <div class="w-full max-w-5xl px-4 mt-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            
+            <!-- LEFT SIDE -->
+            <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                <h1 class="text-4xl sm:text-5xl font-semibold tracking-wide mb-4">hi, i'm madhura :)</h1>
 
-            <!-- LEFT SIDE: TITLE + TAGLINE -->
-            <div class="text-center md:text-left order-2 md:order-1">
-                <div class="typewriter flex justify-center md:justify-start">
-                    <h1 class="text-4xl sm:text-5xl">hi, i'm madhura :)</h1>
-                </div>
+                <p class="text-lg mt-2">
+                    building community-focused experiences & creating things that make life feel warmer.
+                </p>
 
-                <div class="text-center md:text-left mt-4 text-lg space-y-2">
-                    <div>i build community experiences & create things that feel personal.</div>
-                    <div class="text-accent mt-2">
-                        <span class="underline">my work → coming soon</span>
-                    </div>
-                </div>
-
-                <!-- SOCIAL ICONS -->
-                <div class="flex justify-center md:justify-start space-x-6 mt-6">
+                <div class="mt-6 flex space-x-6">
                     <a href="https://www.linkedin.com/in/maddie-vaidya" target="_blank">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" stroke="currentColor" fill="none" stroke-width="1.5">
                             <rect x="4" y="4" width="16" height="16" rx="2"/>
                             <line x1="8" y1="11" x2="8" y2="16"/>
                             <line x1="8" y1="8" x2="8" y2="8.01"/>
                             <line x1="12" y1="16" x2="12" y2="11"/>
-                            <path d="M16 16v-3a2 2 0 10-4 0"/>
+                            <path d="M16 16v-3a2 2 0 0 0 -4 0"/>
                         </svg>
                     </a>
                     <a href="mailto:27vaidyam@gmail.com">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" stroke="currentColor" fill="none" stroke-width="1.5">
                             <rect x="3" y="5" width="18" height="14" rx="2"/>
                             <polyline points="3 7 12 13 21 7"/>
                         </svg>
@@ -125,41 +113,38 @@
             </div>
 
             <!-- RIGHT SIDE: IMAGE -->
-            <div class="flex flex-col items-center order-1 md:order-2">
+            <div class="flex flex-col items-center">
                 <div class="picture-container">
-                    <img src="madhura.jpg" alt="Madhura Vaidya" class="shadow-lg rounded-md">
+                    <img src="assets/website-pic.jpg" alt="profile picture">
                 </div>
+
                 <table class="mt-4 text-lg">
-                    <tr><th>📍 based in:</th><td>toronto / guelph</td></tr>
-                    <tr><th>🎓 studying:</th><td>neuroscience</td></tr>
-                    <tr><th>☕ drinking:</th><td>chai</td></tr>
+                    <tr>
+                        <td class="pr-3 font-semibold">in:</td>
+                        <td>ontario 🍁</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-3 font-semibold">studying:</td>
+                        <td>neuroscience 🧠</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-3 font-semibold">currently:</td>
+                        <td>building small projects ✨</td>
+                    </tr>
                 </table>
             </div>
 
         </div>
     </div>
 
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById("theme-toggle");
-        const body = document.body;
+    <footer>
+        made with 
+        <svg class="heart-icon" width="18" height="18" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 1 0-6.364-6.364L12 7.636 10.682 6.318a4.5 4.5 0 0 0-6.364 0z"/>
+        </svg>
+        in ontario
+    </footer>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const isDark = localStorage.getItem('darkMode') === 'true';
-            if (isDark) body.classList.add('dark-mode');
-        });
-
-        themeToggle.addEventListener("click", () => {
-            const isDark = body.classList.toggle("dark-mode");
-            localStorage.setItem('darkMode', isDark);
-        });
-
-        // Cursor effect
-        const cursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-    </script>
 </body>
 </html>
