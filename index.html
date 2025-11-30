@@ -9,17 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-:root {
-  --bg: #FAF9F6;          /* soft cream */
-  --text: #3B332C;        /* warm brown */
-  --subtle: #6E655D;      /* softer neutral */
-  --sage: #9BAF9A;        /* gentle sage */
-  --accent: #C98A6A;      /* clay / muted terracotta */
-  --accent-soft: #E7C9B1; /* peachy blush for hovers */
-  --card: #FFFAF7;        /* warm light card */
-  --border-soft: rgba(0, 0, 0, 0.05);
-}
-
+    :root {
+      --bg: #FBF7F2;          /* soft creamy background */
+      --text: #332824;        /* warm deep brown */
+      --subtle: #75635A;      /* muted neutral text */
+      --sage: #8FA489;        /* gentle leafy sage */
+      --accent: #CF7C61;      /* soft clay / sunset */
+      --accent-soft: #F1C6AA; /* peachy highlight for hovers */
+      --card: #FFF9F5;        /* light, warm card */
+      --border-soft: rgba(0, 0, 0, 0.04);
     }
 
     * {
@@ -69,6 +67,7 @@
       text-decoration: none;
       font-size: 0.9rem;
       transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      margin-left: 6px;
     }
 
     nav a:hover {
@@ -91,6 +90,10 @@
       main {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .page {
+        padding-top: 20px;
+      }
     }
 
     /* LEFT SIDE (TEXT) */
@@ -101,6 +104,12 @@
       text-transform: uppercase;
       color: var(--sage);
       margin-bottom: 8px;
+    }
+
+    .aka {
+      font-size: 0.82rem;
+      color: var(--subtle);
+      margin-bottom: 4px;
     }
 
     h1 {
@@ -146,8 +155,8 @@
     }
 
     .btn-primary:hover {
-      background-color: #b55f30;
-      border-color: #b55f30;
+      background-color: #b5654c;
+      border-color: #b5654c;
     }
 
     .btn-ghost {
@@ -158,7 +167,7 @@
 
     .btn-ghost:hover {
       border-color: var(--sage);
-      background-color: rgba(133, 158, 122, 0.1);
+      background-color: rgba(143, 164, 137, 0.12);
     }
 
     .currently {
@@ -203,7 +212,7 @@
     .pill {
       padding: 4px 10px;
       border-radius: 999px;
-      background-color: rgba(133, 158, 122, 0.15);
+      background-color: rgba(143, 164, 137, 0.16);
       font-size: 0.8rem;
       color: var(--text);
     }
@@ -225,6 +234,7 @@
       <div class="logo">madhura vaidya</div>
       <nav>
         <a href="experience.html">experience</a>
+        <a href="photos.html">photos</a>
       </nav>
     </header>
 
@@ -232,6 +242,7 @@
       <!-- LEFT: TEXT -->
       <section>
         <div class="tagline">neuroscience · community · care</div>
+        <div class="aka">also goes by maddie :)</div>
         <h1>hi, i'm <span>madhura</span> :)</h1>
         <p class="subtitle">
           i like building warm, people-centered spaces — whether that’s on campus, online,
