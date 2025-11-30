@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" style="--background: #F8F5F3; --foreground: #171717; --accent: #7e7a7a;">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>experience — madhura vaidya</title>
+    <link rel="icon" type="image/x-icon" href="assets/moon-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Crimson Pro', serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            padding-left: calc((100vw - 100%) / 2);
+            padding-right: calc((100vw - 100%) / 2);
+            line-height: 1.6;
+        }
+
+        .unified-border {
+            border: 1px solid var(--foreground);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--foreground);
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .heart-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            margin: 0 2px -3px;
+            stroke: #DC2626;
+            fill: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Home Button -->
+    <a href="index.html" class="absolute top-6 left-6 w-10 h-10 flex items-center justify-center unified-border rounded-full hover:bg-accent/10 transition-all" aria-label="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+    </a>
+
+    <div class="content">
+        <h1>experience</h1>
+
+        <h2>about me</h2>
+        <p>i’m currently pursuing a bsc in neuroscience at the university of guelph and spending my time between school, campus life, and building small creative projects when i can.</p>
+
+        <p>i’m really drawn to work that mixes community and communication. the main point for me is interacting with people and creating positive, meaningful experiences. i like fast-moving spaces, and any programs that make online or in-person communities feel good to be part of.</p>
+
+        <p>outside of school and work, i enjoy small creative outlets like playing flute and mixing music — anything that lets me unwind and make things just for fun.</p>
+
+        <h2>someday ⋆.·</h2>
+        <p>i’d love to live in a walkable community, keep exploring creative projects, and be part of work that lets me contribute to something bigger than myself.</p>
+
+        <h2>let’s chat :)</h2>
+        <p>i enjoy connecting with new people! whether you want my full resume, you’re working on something exciting, or you just want to talk, you can reach me anytime at <strong>27vaidyam@gmail.com</strong>.</p>
+    </div>
+
+    <footer>
+        made with 
+        <svg class="heart-icon" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+        in ontario
+    </footer>
+
+</body>
+</html>
