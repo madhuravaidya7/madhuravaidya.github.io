@@ -4,46 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>experience — madhura vaidya</title>
-  <link rel="icon" type="image/x-icon" href="assets/moon-icon.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* same theme system as index */
+    :root {
+      --bg: #faf6f0;
+      --text: #2b2520;
+      --subtle: #7a6b60;
+      --sage: #859e7a;
+      --accent: #d77a44;
+      --accent-soft: #f4d0b2;
+      --card: #fffaf4;
+      --border-soft: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    body.theme-sunset {
-      --bg: #faf7f2;
-      --text: #2e2a26;
-      --subtle: #8a7b6a;
-      --accent: #d36a3d;
-      --accent-soft: #f4c3a0;
-      --card: #fffaf4;
-    }
-
-    body.theme-earthy {
-      --bg: #f6f5f1;
-      --text: #252321;
-      --subtle: #6b705c;
-      --accent: #50614a;
-      --accent-soft: #d8e2c4;
-      --card: #fbfbf7;
-    }
-
-    body.theme-minimal {
-      --bg: #f8f4f0;
-      --text: #26211c;
-      --subtle: #7f7267;
-      --accent: #b96a4a;
-      --accent-soft: #e2c1aa;
-      --card: #ffffff;
+    a {
+      color: inherit;
     }
 
     .page {
@@ -51,7 +39,6 @@
       margin: 0 auto;
       padding: 24px 20px 40px;
       min-height: 100vh;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
     }
@@ -66,37 +53,37 @@
     .logo {
       font-family: "Playfair Display", serif;
       font-size: 1.05rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: lowercase;
     }
 
     nav a {
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-soft);
       text-decoration: none;
-      color: var(--text);
       font-size: 0.9rem;
-      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
     }
 
     nav a:hover {
       background-color: var(--accent-soft);
       border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .tagline {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 6px;
     }
 
     h1 {
       font-family: "Playfair Display", serif;
-      font-size: 2.4rem;
-      margin: 0 0 10px;
-    }
-
-    .tagline {
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--subtle);
-      margin-bottom: 4px;
+      font-size: 2.3rem;
+      margin: 0 0 20px;
     }
 
     section {
@@ -104,23 +91,23 @@
     }
 
     h2 {
-      font-size: 1.1rem;
+      font-size: 1.02rem;
       text-transform: lowercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 8px;
+      letter-spacing: 0.12em;
       color: var(--subtle);
+      margin-bottom: 6px;
     }
 
     p {
       margin: 4px 0 10px;
-      line-height: 1.6;
+      line-height: 1.7;
       font-size: 0.98rem;
     }
 
     footer {
       margin-top: 30px;
       padding-top: 16px;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      border-top: 1px solid var(--border-soft);
       font-size: 0.85rem;
       color: var(--subtle);
       text-align: center;
@@ -128,8 +115,7 @@
   </style>
 </head>
 
-<!-- use the SAME theme here as on index.html -->
-<body class="theme-sunset">
+<body>
   <div class="page">
     <header>
       <div class="logo">madhura vaidya</div>
