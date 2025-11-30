@@ -1,150 +1,299 @@
 <!DOCTYPE html>
-<html lang="en" style="--background: #F8F5F3; --foreground: #171717; --accent: #7e7a7a; --accent-invert: #FFCFAF">
+<html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/assets/moon-icon.png">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>madhura vaidya</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>madhura vaidya</title>
+  <link rel="icon" type="image/x-icon" href="assets/moon-icon.png" />
 
-    <!-- Fonts + Tailwind -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-            --cursor-size: 12px;
-        }
+  <style>
+    /* ---------- THEMES ---------- */
 
-        body {
-            cursor: none;
-            font-family: 'Crimson Pro', serif;
-            background-color: var(--background);
-            color: var(--foreground);
-        }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-        /* custom cursor */
-        .custom-cursor {
-            width: var(--cursor-size);
-            height: var(--cursor-size);
-            background: rgba(23, 23, 23, 0.2);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            transition: transform 0.15s, opacity 0.15s;
-            z-index: 9999;
-            opacity: 0.8;
-        }
+    /* A) warm sunset soft girl */
+    body.theme-sunset {
+      --bg: #faf7f2;
+      --text: #2e2a26;
+      --subtle: #8a7b6a;
+      --accent: #d36a3d;
+      --accent-soft: #f4c3a0;
+      --card: #fffaf4;
+    }
 
-        /* general styles */
-        .unified-border {
-            border: 1px solid var(--foreground);
-            transition: all 0.2s ease;
-        }
+    /* B) earthy cottagecore minimal */
+    body.theme-earthy {
+      --bg: #f6f5f1;
+      --text: #252321;
+      --subtle: #6b705c;
+      --accent: #50614a;
+      --accent-soft: #d8e2c4;
+      --card: #fbfbf7;
+    }
 
-        .picture-container img {
-            width: 280px;
-            height: 350px;
-            object-fit: cover;
-        }
+    /* C) warm minimal clean */
+    body.theme-minimal {
+      --bg: #f8f4f0;
+      --text: #26211c;
+      --subtle: #7f7267;
+      --accent: #b96a4a;
+      --accent-soft: #e2c1aa;
+      --card: #ffffff;
+    }
 
-        footer {
-            border-top: 1px solid var(--foreground);
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-            text-align: center;
-        }
+    /* ---------- LAYOUT ---------- */
 
-        .heart-icon {
-            stroke: #DC2626;
-            fill: none;
-            margin-bottom: -4px;
-        }
-    </style>
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+    }
+
+    nav a {
+      margin-left: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 780px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+
+    /* ---------- HERO TEXT ---------- */
+
+    .tagline {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.8rem;
+      margin: 0 0 10px;
+    }
+
+    h1 span {
+      font-size: 2.6rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--subtle);
+      margin-bottom: 18px;
+      max-width: 32rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--text);
+      border-color: var(--text);
+    }
+
+    .btn-ghost {
+      border-color: rgba(0, 0, 0, 0.1);
+      color: var(--text);
+      background-color: transparent;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      background-color: var(--accent-soft);
+    }
+
+    .currently {
+      font-size: 0.95rem;
+      color: var(--subtle);
+      display: grid;
+      gap: 4px;
+    }
+
+    .currently span {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ---------- IMAGE SIDE ---------- */
+
+    .card {
+      background-color: var(--card);
+      border-radius: 18px;
+      padding: 14px 14px 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .profile-img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      display: block;
+      max-height: 360px;
+    }
+
+    .card-caption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 0.85rem;
+      color: var(--subtle);
+      text-align: center;
+    }
+  </style>
 </head>
 
-<body class="min-h-screen flex flex-col items-center">
-    <div class="custom-cursor"></div>
+<!-- 👇 CHANGE THIS CLASS TO TRY OTHER THEMES:
+     theme-sunset   (A - warm sunset soft girl)
+     theme-earthy   (B - earthy cottage minimal)
+     theme-minimal  (C - warm clean minimal)
+-->
+<body class="theme-sunset">
+  <div class="page">
+    <header>
+      <div class="logo">madhura vaidya</div>
+      <nav>
+        <a href="experience.html">experience</a>
+      </nav>
+    </header>
 
-    <!-- HOME BUTTON -->
-    <a href="/index.html" class="absolute top-6 left-6 w-10 h-10 flex items-center justify-center unified-border rounded-full hover:bg-accent/10 transition-all">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-        </svg>
-    </a>
+    <main>
+      <!-- LEFT: TEXT -->
+      <section>
+        <div class="tagline">neuroscience · community · care</div>
+        <h1>hi, i'm <span>madhura</span> :)</h1>
+        <p class="subtitle">
+          i like building warm, people-centered spaces — whether that’s on campus, online,
+          or in small creative projects.
+        </p>
 
-    <!-- 🌟 UPDATED NAVIGATION -->
-    <div class="flex justify-center space-x-5 mt-5 menu">
-        <a href="experience.html" 
-           class="px-4 py-1.5 unified-border rounded-full text-base font-medium hover:bg-accent/10 transition-all">
-           experience
-        </a>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div class="w-full max-w-5xl px-4 mt-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            
-            <!-- LEFT SIDE -->
-            <div class="text-center md:text-left flex flex-col items-center md:items-start">
-                <h1 class="text-4xl sm:text-5xl font-semibold tracking-wide mb-4">hi, i'm madhura :)</h1>
-
-                <p class="text-lg mt-2">
-                    building community-focused experiences & creating things that make life feel warmer.
-                </p>
-
-                <div class="mt-6 flex space-x-6">
-                    <a href="https://www.linkedin.com/in/maddie-vaidya" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" stroke="currentColor" fill="none" stroke-width="1.5">
-                            <rect x="4" y="4" width="16" height="16" rx="2"/>
-                            <line x1="8" y1="11" x2="8" y2="16"/>
-                            <line x1="8" y1="8" x2="8" y2="8.01"/>
-                            <line x1="12" y1="16" x2="12" y2="11"/>
-                            <path d="M16 16v-3a2 2 0 0 0 -4 0"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:27vaidyam@gmail.com">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" stroke="currentColor" fill="none" stroke-width="1.5">
-                            <rect x="3" y="5" width="18" height="14" rx="2"/>
-                            <polyline points="3 7 12 13 21 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- RIGHT SIDE: IMAGE -->
-            <div class="flex flex-col items-center">
-                <div class="picture-container">
-                    <img src="assets/website-pic.jpg" alt="profile picture">
-                </div>
-
-                <table class="mt-4 text-lg">
-                    <tr>
-                        <td class="pr-3 font-semibold">in:</td>
-                        <td>ontario 🍁</td>
-                    </tr>
-                    <tr>
-                        <td class="pr-3 font-semibold">studying:</td>
-                        <td>neuroscience 🧠</td>
-                    </tr>
-                    <tr>
-                        <td class="pr-3 font-semibold">currently:</td>
-                        <td>building small projects ✨</td>
-                    </tr>
-                </table>
-            </div>
-
+        <div class="buttons">
+          <a href="mailto:27vaidyam@gmail.com" class="btn-primary">
+            email me
+          </a>
+          <a href="https://www.linkedin.com/in/maddie-vaidya" target="_blank" class="btn-ghost">
+            linkedin
+          </a>
         </div>
-    </div>
+
+        <div class="currently">
+          <div>based in <span>ontario, canada 🍁</span></div>
+          <div>studying <span>bsc neuroscience @ uofg</span></div>
+          <div>interested in <span>community & creator-facing work</span></div>
+        </div>
+      </section>
+
+      <!-- RIGHT: IMAGE CARD -->
+      <aside>
+        <div class="card">
+          <!-- put your actual image file here -->
+          <img src="madhura.jpg" alt="photo of madhura" class="profile-img" />
+          <div class="card-caption">
+            <span>tiny moments, big feelings</span>
+            <span class="pill">everyday life ☁️</span>
+          </div>
+        </div>
+      </aside>
+    </main>
 
     <footer>
-        made with 
-        <svg class="heart-icon" width="18" height="18" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 1 0-6.364-6.364L12 7.636 10.682 6.318a4.5 4.5 0 0 0-6.364 0z"/>
-        </svg>
-        in ontario
+      made with love
     </footer>
-
+  </div>
 </body>
 </html>
