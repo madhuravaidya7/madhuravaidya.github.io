@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Madhura Vaidya</title>
+  <title>madhura vaidya</title>
   <meta
     name="description"
-    content="Madhura Vaidya (Maddie) — creative interests, experience, and photography."
+    content="madhura vaidya — creative interests, photography, and experience."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,17 +21,13 @@
       --background: #f6efe8;
       --foreground: #201a17;
       --muted: #6f625a;
-      --border: #d7c9bf;
-      --accent: #a66e5a;
-      --card: rgba(255, 252, 248, 0.72);
+      --border: #d8c9be;
+      --accent: #9a6857;
+      --card: rgba(255, 251, 247, 0.75);
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -41,9 +36,9 @@
       font-family: "Inter", sans-serif;
       color: var(--foreground);
       background-color: var(--background);
-      background-image:
-        radial-gradient(rgba(32, 26, 23, 0.035) 0.8px, transparent 0.8px);
+      background-image: radial-gradient(rgba(32, 26, 23, 0.04) 0.8px, transparent 0.8px);
       background-size: 12px 12px;
+      text-transform: lowercase;
     }
 
     a {
@@ -54,7 +49,7 @@
     .page {
       width: min(1120px, 92%);
       margin: 0 auto;
-      padding: 22px 0 36px;
+      padding: 24px 0 40px;
     }
 
     .nav {
@@ -62,22 +57,21 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
 
-    .nav-link {
+    .nav a {
       border: 1px solid var(--foreground);
       border-radius: 999px;
       padding: 10px 18px;
       font-size: 0.96rem;
-      font-weight: 500;
-      background: transparent;
       transition: 0.2s ease;
+      background: transparent;
     }
 
-    .nav-link:hover {
+    .nav a:hover {
+      background: rgba(154, 104, 87, 0.08);
       transform: translateY(-1px);
-      background: rgba(166, 110, 90, 0.08);
     }
 
     .hero {
@@ -85,20 +79,13 @@
       grid-template-columns: 1.05fr 0.95fr;
       gap: 56px;
       align-items: center;
-      min-height: calc(100vh - 150px);
-    }
-
-    .intro-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      min-height: calc(100vh - 160px);
     }
 
     .eyebrow {
       font-size: 0.98rem;
       color: var(--muted);
       margin-bottom: 10px;
-      letter-spacing: 0.01em;
     }
 
     h1 {
@@ -112,7 +99,7 @@
 
     .subtitle {
       margin-top: 20px;
-      font-size: 1.22rem;
+      font-size: 1.2rem;
       line-height: 1.5;
       max-width: 34rem;
     }
@@ -120,8 +107,8 @@
     .intro {
       margin-top: 18px;
       font-size: 1rem;
-      line-height: 1.8;
-      max-width: 39rem;
+      line-height: 1.85;
+      max-width: 38rem;
       color: var(--muted);
     }
 
@@ -129,7 +116,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 24px;
+      margin-top: 26px;
     }
 
     .button-primary,
@@ -139,6 +126,7 @@
       font-size: 0.96rem;
       font-weight: 500;
       transition: 0.2s ease;
+      border: 1px solid var(--foreground);
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -147,22 +135,15 @@
     .button-primary {
       background: var(--foreground);
       color: #fffaf6;
-      border: 1px solid var(--foreground);
     }
 
-    .button-primary:hover {
+    .button-primary:hover,
+    .button-secondary:hover {
       transform: translateY(-1px);
-      opacity: 0.94;
-    }
-
-    .button-secondary {
-      border: 1px solid var(--foreground);
-      background: transparent;
     }
 
     .button-secondary:hover {
-      transform: translateY(-1px);
-      background: rgba(166, 110, 90, 0.08);
+      background: rgba(154, 104, 87, 0.08);
     }
 
     .socials {
@@ -187,7 +168,7 @@
     }
 
     .photo-card {
-      width: min(100%, 380px);
+      width: min(100%, 390px);
       background: var(--card);
       border: 1px solid var(--border);
       padding: 14px;
@@ -195,24 +176,25 @@
     }
 
     .photo-card img {
-      display: block;
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
+      display: block;
     }
 
     .currently {
-      width: min(100%, 380px);
+      width: min(100%, 390px);
       margin-top: 18px;
       border: 1px solid var(--border);
-      background: rgba(255, 252, 248, 0.55);
+      background: rgba(255, 251, 247, 0.62);
       padding: 16px 18px;
     }
 
     .currently-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.8rem;
       margin: 0 0 8px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.85rem;
+      font-weight: 600;
     }
 
     .currently-table {
@@ -222,7 +204,7 @@
     }
 
     .currently-table tr:not(:last-child) {
-      border-bottom: 1px solid rgba(215, 201, 191, 0.85);
+      border-bottom: 1px solid rgba(216, 201, 190, 0.9);
     }
 
     .currently-table th,
@@ -233,18 +215,18 @@
     }
 
     .currently-table th {
-      width: 38%;
+      width: 36%;
       font-weight: 500;
       color: var(--muted);
     }
 
     .currently-table td {
-      width: 62%;
+      width: 64%;
     }
 
     footer {
       border-top: 1px solid var(--border);
-      margin-top: 40px;
+      margin-top: 36px;
       padding-top: 18px;
       font-size: 0.92rem;
       color: var(--muted);
@@ -254,16 +236,16 @@
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 30px;
         min-height: auto;
-      }
-
-      .intro-wrap {
-        order: 2;
       }
 
       .right-column {
         order: 1;
+      }
+
+      .left-column {
+        order: 2;
       }
 
       h1 {
@@ -274,79 +256,69 @@
       .intro {
         max-width: 100%;
       }
-
-      .photo-card,
-      .currently {
-        width: min(100%, 420px);
-      }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <nav class="nav">
-      <a class="nav-link" href="index.html">about</a>
-      <a class="nav-link" href="experience.html">experience</a>
-      <a class="nav-link" href="creative.html">creative</a>
+      <a href="index.html">about</a>
+      <a href="creative.html">creative</a>
     </nav>
 
     <main class="hero">
-      <section class="intro-wrap">
-        <div class="eyebrow">Maddie, for short</div>
+      <section class="left-column">
+        <div class="eyebrow">maddie, for short</div>
 
-        <h1>Madhura Vaidya</h1>
+        <h1>madhura vaidya</h1>
 
         <div class="subtitle">
-          A place for my work, creative interests, and the things I’m still figuring out.
+          a place for my work, creative interests, and things i’m still figuring out
         </div>
 
         <p class="intro">
-          I’m interested in creative work, especially photography, content, and visuals.
-          Most of my experience so far has been in people-facing roles, where I’ve learned
-          a lot about communication, tone, and how small details shape someone’s experience.
-          I made this site to bring those two sides together a bit more clearly.
+          i’m interested in creative work, especially photography, content, and visuals.
+          most of my experience so far has been in people-facing roles, which taught me a lot
+          about communication, tone, and attention to detail. i made this site to bring those
+          things together a little more intentionally.
         </p>
 
         <div class="button-row">
           <a class="button-primary" href="creative.html">see creative work →</a>
-          <a class="button-secondary" href="experience.html">read experience</a>
+          <a class="button-secondary" href="experience.html">experience</a>
         </div>
 
         <div class="socials">
           <a href="mailto:27vaidyam@gmail.com">email</a>
-          <a href="https://www.linkedin.com/in/maddie-vaidya" target="_blank" rel="noopener noreferrer">linkedin</a>
-          <a href="https://www.instagram.com/madhura.png" target="_blank" rel="noopener noreferrer">instagram</a>
+          <a href="https://www.linkedin.com/in/maddievaidya/" target="_blank" rel="noopener noreferrer">linkedin</a>
+          <a href="https://www.instagram.com/maddievaidya/" target="_blank" rel="noopener noreferrer">instagram</a>
         </div>
       </section>
 
       <section class="right-column">
         <div class="photo-card">
-          <img src="assets/profile.jpg" alt="Portrait of Madhura Vaidya" />
+          <img src="profile.jpg" alt="portrait of madhura vaidya" />
         </div>
 
         <div class="currently">
-          <h2 class="currently-title">currently</h2>
+          <h2 class="currently-title">right now</h2>
 
           <table class="currently-table">
             <tr>
               <th>based in</th>
-              <td>Ontario, Canada</td>
+              <td>toronto</td>
             </tr>
             <tr>
               <th>studying</th>
-              <td>Neuroscience</td>
+              <td>neuroscience</td>
             </tr>
             <tr>
-              <th>working</th>
-              <td>in student-facing roles</td>
+              <th>interested in</th>
+              <td>photography, content, and visual storytelling</td>
             </tr>
             <tr>
-              <th>exploring</th>
-              <td>creative + content work</td>
-            </tr>
-            <tr>
-              <th>building</th>
-              <td>a space for my photography</td>
+              <th>lately</th>
+              <td>trying to be more consistent with creating</td>
             </tr>
           </table>
         </div>
@@ -354,7 +326,7 @@
     </main>
 
     <footer>
-      made by Madhura Vaidya
+      made by madhura vaidya
     </footer>
   </div>
 </body>
