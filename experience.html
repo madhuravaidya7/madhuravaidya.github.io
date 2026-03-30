@@ -3,11 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experience | Madhura Vaidya</title>
+  <title>experience</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --background: #f6efe8;
+      --foreground: #201a17;
+      --muted: #6f625a;
+      --border: #d8c9be;
+      --accent: #9a6857;
+      --card: rgba(255, 251, 247, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      text-transform: lowercase;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(860px, 92%);
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+    }
+
+    .back {
+      border: 1px solid var(--foreground);
+      border-radius: 999px;
+      padding: 10px 16px;
+      transition: 0.2s ease;
+    }
+
+    .back:hover {
+      background: rgba(154, 104, 87, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 8vw, 4.6rem);
+      font-weight: 600;
+      line-height: 0.95;
+    }
+
+    .lead {
+      max-width: 42rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .section {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .org {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      line-height: 1.85;
+      margin: 0 0 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 30px;
+      padding-top: 18px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; padding: 40px;">
-  <h1>Experience</h1>
-  <p>Coming soon.</p>
-  <p><a href="index.html">Back home</a></p>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <a class="back" href="index.html">← back</a>
+      <a class="back" href="creative.html">creative</a>
+    </div>
+
+    <h1>experience</h1>
+
+    <p class="lead">
+      most of my experience so far has been in roles where i’ve had to think quickly,
+      communicate clearly, and deal with people in real time. even when the work wasn’t
+      “creative” on paper, it still shaped how i think about tone, presentation, and the
+      way people experience things.
+    </p>
+
+    <section class="section">
+      <div class="org">university of guelph</div>
+      <div class="meta">student desk clerk · 2022 – present</div>
+      <p>
+        this is a front-facing role where i handle questions, issues, and unexpected situations
+        from students. it can get busy quickly, so a lot of it is about staying calm, communicating
+        clearly, and figuring out what needs to happen next.
+      </p>
+      <p>
+        it’s probably the role that’s shaped me the most. i’ve gotten a lot better at reading
+        situations, adjusting how i communicate, and helping people feel understood even when
+        things aren’t going smoothly.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="org">law society of ontario</div>
+      <div class="meta">summer student, trustee services · 2025</div>
+      <p>
+        i worked on administrative and operational tasks in a structured, confidential environment.
+        a lot of the work involved organizing documents, tracking information, and making sure things
+        were accurate and easy to follow.
+      </p>
+      <p>
+        what i took away from this role was how important clarity and structure are, especially when
+        the stakes are high. it made me more detail-oriented and more aware of how information is
+        presented and used by other people.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="org">what i’ve been taking from all of this</div>
+      <p>
+        across different roles, i’ve noticed i care a lot about how things come across to people —
+        whether that’s through communication, structure, or visuals.
+      </p>
+      <p>
+        that’s part of why i’ve been getting more interested in creative and content work. i like
+        thinking about presentation, tone, and the details that make something feel intentional.
+      </p>
+    </section>
+
+    <footer>
+      <a href="mailto:27vaidyam@gmail.com">27vaidyam@gmail.com</a>
+    </footer>
+  </div>
 </body>
 </html>
