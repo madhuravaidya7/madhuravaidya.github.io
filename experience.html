@@ -1,178 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>experience</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>experience</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --background: #f6efe8;
-      --foreground: #201a17;
-      --muted: #6f625a;
-      --border: #d8c9be;
-      --accent: #9a6857;
-      --card: rgba(255, 251, 247, 0.72);
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f6efe8;
+  color: #201a17;
+  text-transform: lowercase;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: var(--background);
-      color: var(--foreground);
-      text-transform: lowercase;
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
 
-    .page {
-      width: min(860px, 92%);
-      margin: 0 auto;
-      padding: 24px 0 40px;
-    }
+.back {
+  border: 1px solid #201a17;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 34px;
-      flex-wrap: wrap;
-    }
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
 
-    .back {
-      border: 1px solid var(--foreground);
-      border-radius: 999px;
-      padding: 10px 16px;
-      transition: 0.2s ease;
-    }
+p {
+  line-height: 1.8;
+  color: #6f625a;
+}
 
-    .back:hover {
-      background: rgba(154, 104, 87, 0.08);
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(3rem, 8vw, 4.6rem);
-      font-weight: 600;
-      line-height: 0.95;
-    }
-
-    .lead {
-      max-width: 42rem;
-      line-height: 1.85;
-      color: var(--muted);
-      margin-bottom: 34px;
-    }
-
-    .section {
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
-    }
-
-    .org {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem;
-      margin-bottom: 6px;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    p {
-      line-height: 1.85;
-      margin: 0 0 12px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      margin-top: 30px;
-      padding-top: 18px;
-      font-size: 0.92rem;
-      color: var(--muted);
-      text-align: center;
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <div class="page">
-    <div class="topbar">
-      <a class="back" href="index.html">← back</a>
-      <a class="back" href="creative.html">creative</a>
-    </div>
 
-    <h1>experience</h1>
+<div class="container">
 
-    <p class="lead">
-      most of my experience so far has been in roles where i’ve had to think quickly,
-      communicate clearly, and deal with people in real time. even when the work wasn’t
-      “creative” on paper, it still shaped how i think about tone, presentation, and the
-      way people experience things.
-    </p>
+<div class="top">
+  <a class="back" href="index.html">← back</a>
+  <a class="back" href="creative.html">creative</a>
+</div>
 
-    <section class="section">
-      <div class="org">university of guelph</div>
-      <div class="meta">student desk clerk · 2022 – present</div>
-      <p>
-        this is a front-facing role where i handle questions, issues, and unexpected situations
-        from students. it can get busy quickly, so a lot of it is about staying calm, communicating
-        clearly, and figuring out what needs to happen next.
-      </p>
-      <p>
-        it’s probably the role that’s shaped me the most. i’ve gotten a lot better at reading
-        situations, adjusting how i communicate, and helping people feel understood even when
-        things aren’t going smoothly.
-      </p>
-    </section>
+<h2>in a past life</h2>
 
-    <section class="section">
-      <div class="org">law society of ontario</div>
-      <div class="meta">summer student, trustee services · 2025</div>
-      <p>
-        i worked on administrative and operational tasks in a structured, confidential environment.
-        a lot of the work involved organizing documents, tracking information, and making sure things
-        were accurate and easy to follow.
-      </p>
-      <p>
-        what i took away from this role was how important clarity and structure are, especially when
-        the stakes are high. it made me more detail-oriented and more aware of how information is
-        presented and used by other people.
-      </p>
-    </section>
+<p>
+i’ve spent most of my time working in roles where i’m interacting with people constantly — 
+handling questions, figuring things out in real time, and being the first point of contact 
+when something isn’t clear.
+</p>
 
-    <section class="section">
-      <div class="org">what i’ve been taking from all of this</div>
-      <p>
-        across different roles, i’ve noticed i care a lot about how things come across to people —
-        whether that’s through communication, structure, or visuals.
-      </p>
-      <p>
-        that’s part of why i’ve been getting more interested in creative and content work. i like
-        thinking about presentation, tone, and the details that make something feel intentional.
-      </p>
-    </section>
+<p>
+at the university of guelph residence desk, that’s meant dealing with high-volume situations 
+where things can shift quickly. i’ve learned how to stay calm, communicate clearly, and make 
+decisions without always having perfect information.
+</p>
 
-    <footer>
-      <a href="mailto:27vaidyam@gmail.com">27vaidyam@gmail.com</a>
-    </footer>
-  </div>
+<p>
+at the law society of ontario, i worked in a more structured environment, organizing and 
+tracking confidential information. it pushed me to be more detail-oriented and intentional 
+about how things are presented and understood.
+</p>
+
+<p>
+if you’d like my full resume, feel free to reach out:
+<strong>27vaidyam@gmail.com</strong>
+</p>
+
+<h2>right now</h2>
+
+<p>
+i’m finishing my degree in neuroscience and starting to spend more time exploring creative 
+work — especially photography, content, and anything visual.
+</p>
+
+<p>
+i’m trying to get more consistent with creating and figuring out what kind of work i actually 
+want to keep building on.
+</p>
+
+<h2>someday</h2>
+
+<p>
+i’d like to do work that sits somewhere between creative and strategic — where i can think 
+about how things look, feel, and come across.
+</p>
+
+<p>
+i’m also interested in content, branding, and visual direction, but still figuring out what 
+that looks like in practice.
+</p>
+
+</div>
+
 </body>
 </html>
