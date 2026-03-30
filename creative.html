@@ -3,11 +3,443 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creative | Madhura Vaidya</title>
+  <title>creative</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --background: #f6efe8;
+      --foreground: #201a17;
+      --muted: #6f625a;
+      --border: #d8c9be;
+      --accent: #9a6857;
+      --overlay: rgba(18, 14, 12, 0.62);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      text-transform: lowercase;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1200px, 94%);
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .back {
+      border: 1px solid var(--foreground);
+      border-radius: 999px;
+      padding: 10px 16px;
+      transition: 0.2s ease;
+    }
+
+    .back:hover {
+      background: rgba(154, 104, 87, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 8vw, 4.8rem);
+      font-weight: 600;
+      line-height: 0.95;
+    }
+
+    .lead {
+      max-width: 44rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: #eadfd7;
+      min-height: 260px;
+      border: 1px solid var(--border);
+    }
+
+    .item.large {
+      grid-column: span 7;
+      min-height: 520px;
+    }
+
+    .item.medium {
+      grid-column: span 5;
+      min-height: 520px;
+    }
+
+    .item.small {
+      grid-column: span 4;
+      min-height: 360px;
+    }
+
+    .item.wide {
+      grid-column: span 8;
+      min-height: 420px;
+    }
+
+    .item img,
+    .item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .item:hover img,
+    .item:hover video {
+      transform: scale(1.03);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--overlay), rgba(18, 14, 12, 0.08));
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .item:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay-content h2 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: "Inter", sans-serif;
+    }
+
+    .overlay-content p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      opacity: 0.92;
+    }
+
+    .notes {
+      margin-top: 30px;
+      max-width: 44rem;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .notes h2 {
+      margin: 0 0 8px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+    }
+
+    .notes p {
+      margin: 0;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 12, 11, 0.92);
+      z-index: 1000;
+      padding: 32px;
+    }
+
+    .modal.open {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-media {
+      max-width: min(1100px, 92vw);
+      max-height: 78vh;
+      width: auto;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: black;
+    }
+
+    .modal-caption {
+      margin-top: 14px;
+      max-width: min(900px, 92vw);
+      color: rgba(255,255,255,0.92);
+      text-align: center;
+    }
+
+    .modal-caption h3 {
+      margin: 0 0 6px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .modal-caption p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 34px;
+      padding-top: 18px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .item.large,
+      .item.medium,
+      .item.small,
+      .item.wide {
+        grid-column: span 12;
+        min-height: 360px;
+      }
+    }
+
+    @media (hover: none) {
+      .overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(18, 14, 12, 0.7), rgba(18, 14, 12, 0.12));
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; padding: 40px;">
-  <h1>Creative</h1>
-  <p>Coming soon.</p>
-  <p><a href="index.html">Back home</a></p>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <a class="back" href="index.html">← back</a>
+      <a class="back" href="experience.html">experience</a>
+    </div>
+
+    <h1>creative</h1>
+
+    <p class="lead">
+      this is where i’m starting to collect the visual side of what i like making.
+      a lot of it is photography right now, but i’m also interested in mood, layout,
+      and the way images can shape how something feels.
+    </p>
+
+    <section class="gallery">
+      <div class="item large"
+           data-type="image"
+           data-src="photo1.jpg"
+           data-title="portrait study"
+           data-description="a quieter image focused on light, texture, and expression.">
+        <img src="photo1.jpg" alt="portrait study" />
+        <div class="overlay">
+          <div class="overlay-content">
+            <h2>portrait study</h2>
+            <p>a quieter image focused on light, texture, and expression.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item medium"
+           data-type="video"
+           data-src="video1.mp4"
+           data-title="movement"
+           data-description="short-form visual work with motion, framing, and atmosphere.">
+        <video src="video1.mp4" muted playsinline></video>
+        <div class="overlay">
+          <div class="overlay-content">
+            <h2>movement</h2>
+            <p>short-form visual work with motion, framing, and atmosphere.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item small"
+           data-type="image"
+           data-src="photo2.jpg"
+           data-title="detail"
+           data-description="smaller visual moments that still feel intentional.">
+        <img src="photo2.jpg" alt="detail" />
+        <div class="overlay">
+          <div class="overlay-content">
+            <h2>detail</h2>
+            <p>smaller visual moments that still feel intentional.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item small"
+           data-type="image"
+           data-src="photo3.jpg"
+           data-title="city"
+           data-description="colour, framing, and a bit more movement.">
+        <img src="photo3.jpg" alt="city" />
+        <div class="overlay">
+          <div class="overlay-content">
+            <h2>city</h2>
+            <p>colour, framing, and a bit more movement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item small"
+           data-type="image"
+           data-src="photo4.jpg"
+           data-title="softness"
+           data-description="an image built more around mood than explanation.">
+        <img src="photo4.jpg" alt="softness" />
+        <div class="overlay">
+          <div class="overlay-content">
+            <h2>softness</h2>
+            <p>an image built more around mood than explanation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>beyond photography</h2>
+      <p>
+        i’m also interested in content and visual work more generally, especially how images,
+        tone, and presentation all come together. this page will probably keep changing as i
+        add more work and get clearer about what i want it to become.
+      </p>
+    </section>
+
+    <footer>
+      instagram: <a href="https://www.instagram.com/maddievaidya/" target="_blank" rel="noopener noreferrer">@maddievaidya</a>
+    </footer>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-close" id="modalClose">×</div>
+    <div id="modalContent"></div>
+    <div class="modal-caption">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.item');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    const modalClose = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+
+    items.forEach(item => {
+      const previewVideo = item.querySelector('video');
+
+      if (previewVideo) {
+        item.addEventListener('mouseenter', () => {
+          previewVideo.play().catch(() => {});
+        });
+
+        item.addEventListener('mouseleave', () => {
+          previewVideo.pause();
+          previewVideo.currentTime = 0;
+        });
+      }
+
+      item.addEventListener('click', () => {
+        const type = item.dataset.type;
+        const src = item.dataset.src;
+        const title = item.dataset.title;
+        const description = item.dataset.description;
+
+        modalContent.innerHTML = '';
+
+        if (type === 'video') {
+          const video = document.createElement('video');
+          video.src = src;
+          video.controls = true;
+          video.autoplay = true;
+          video.className = 'modal-media';
+          modalContent.appendChild(video);
+        } else {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = title;
+          img.className = 'modal-media';
+          modalContent.appendChild(img);
+        }
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modal.classList.add('open');
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modalContent.innerHTML = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
